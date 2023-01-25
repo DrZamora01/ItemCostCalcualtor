@@ -1,0 +1,36 @@
+<!DOCTYPE html><html>
+<head><title>Item Cost Calculator</title>
+<script>
+    function ItemCostCalculator(){
+        var itemCost;
+        var quantity;
+        taxRate =.06;
+        
+        itemCost = document.calcForm.itemInput.value;
+        quantity = document.calcForm.quantityInput.value;
+        
+        amount = (itemCost * quantity);
+        taxRate = taxRate * amount;
+        cost = amount + taxRate;
+
+        document.calcForm.answer.value = "$ " + cost;
+
+    }
+</script></head>
+
+<body>
+    <form name = "calcForm">
+<p><input size="10" name = "itemInput" /> Enter item cost </p>
+<p><input size="10" name = "quantityInput" /> Enter quantity </p>
+
+
+
+
+
+<p><input type="button" onclick="ItemCostCalculator()" value = "total cost with tax" /> 
+<input type="reset" value="Reset" /></p>
+<p><input size="15" name="answer" /> Total cost with 6% tax </p> 
+    </form>
+</body>
+
+</html>
